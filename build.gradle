@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
+}
+
+group = 'com.guflimc.kingdomcraft.demo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.jorisg.com/releases' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+}
+
+dependencies {
+    compileOnly 'com.gufli.kingdomcraft.premium:api:7.1.2'
+    compileOnly 'org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT'
+}
+
+bukkit {
+    name = rootProject.name
+    main = project.group + '.DemoPlugin'
+    description = 'Create regions with respawning blocks'
+    author = 'GufliMC'
+    website = 'https://guflimc.com/'
+    apiVersion = '1.17'
+    depend = ["KingdomCraft", "KingdomCraftPremium"]
+}
